@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "description": "GT TIRES HUNTER catalog, searches, pipeline and agent logs",
+  "tables": [
+    {
+      "name": "listings",
+      "columns": [
+        { "name": "id", "type": "TEXT", "primaryKey": true },
+        { "name": "brand", "type": "TEXT", "notNull": true },
+        { "name": "model", "type": "TEXT", "notNull": true },
+        { "name": "size", "type": "TEXT", "notNull": true },
+        { "name": "price", "type": "REAL", "notNull": true },
+        { "name": "remaining", "type": "INTEGER", "notNull": true },
+        { "name": "dot", "type": "INTEGER", "notNull": true },
+        { "name": "city", "type": "TEXT", "notNull": true },
+        { "name": "region", "type": "TEXT", "notNull": true },
+        { "name": "source", "type": "TEXT", "notNull": true },
+        { "name": "condition", "type": "TEXT", "notNull": true },
+        { "name": "quantity", "type": "INTEGER", "notNull": true },
+        { "name": "delivery", "type": "REAL", "notNull": true },
+        { "name": "cost", "type": "REAL", "notNull": true },
+        { "name": "sell_price", "type": "REAL", "notNull": true },
+        { "name": "profit", "type": "REAL", "notNull": true },
+        { "name": "roi", "type": "REAL", "notNull": true },
+        { "name": "score", "type": "INTEGER", "notNull": true },
+        { "name": "status", "type": "TEXT", "notNull": true },
+        { "name": "image", "type": "TEXT", "notNull": true },
+        { "name": "url", "type": "TEXT", "notNull": true },
+        { "name": "notes", "type": "TEXT", "notNull": true },
+        { "name": "found_at", "type": "TEXT", "notNull": true },
+        { "name": "created_at", "type": "TEXT", "notNull": true },
+        { "name": "updated_at", "type": "TEXT", "notNull": true }
+      ]
+    },
+    {
+      "name": "searches",
+      "columns": [
+        { "name": "id", "type": "TEXT", "primaryKey": true },
+        { "name": "query_json", "type": "TEXT", "notNull": true },
+        { "name": "last_query", "type": "TEXT", "notNull": true },
+        { "name": "created_at", "type": "TEXT", "notNull": true }
+      ]
+    },
+    {
+      "name": "user_items",
+      "columns": [
+        { "name": "listing_id", "type": "TEXT", "notNull": true },
+        { "name": "kind", "type": "TEXT", "notNull": true },
+        { "name": "created_at", "type": "TEXT", "notNull": true }
+      ],
+      "primaryKey": ["listing_id", "kind"]
+    },
+    {
+      "name": "agent_logs",
+      "columns": [
+        { "name": "id", "type": "TEXT", "primaryKey": true },
+        { "name": "text", "type": "TEXT", "notNull": true },
+        { "name": "done", "type": "INTEGER", "notNull": true },
+        { "name": "created_at", "type": "TEXT", "notNull": true }
+      ]
+    },
+    {
+      "name": "app_settings",
+      "columns": [
+        { "name": "key", "type": "TEXT", "primaryKey": true },
+        { "name": "value", "type": "TEXT", "notNull": true },
+        { "name": "updated_at", "type": "TEXT", "notNull": true }
+      ]
+    }
+  ]
+}
