@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-gt-bg: #0b0c0e;
+  --color-gt-panel: #111318;
+  --color-gt-card: #16181f;
+  --color-gt-elevated: #1c1f28;
+  --color-gt-line: #262a33;
+  --color-gt-line-strong: #323743;
+  --color-gt-yellow: #f5c518;
+  --color-gt-yellow-dim: #c9a227;
+  --color-gt-text: #f4f5f7;
+  --color-gt-muted: #8b90a0;
+  --color-gt-faint: #5c6270;
+  --color-gt-green: #3ddc97;
+  --color-gt-red: #ff5c5c;
+  --color-gt-orange: #f5a524;
+  --color-gt-blue: #5b8cff;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  background: #0b0c0e;
+  color: #f4f5f7;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #323743;
+  border-radius: 999px;
+}
+
+input[type="range"] {
+  accent-color: #f5c518;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.field,
+.input {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid #323743;
+  background: #16181f;
+  color: #f4f5f7;
+  padding: 0.7rem 0.85rem;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.field:focus,
+.input:focus {
+  border-color: #f5c518;
+}
+
+select.field,
+select.input {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%238b90a0' d='M1 1l5 5 5-5'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  padding-right: 2.2rem;
+}
